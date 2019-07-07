@@ -12,6 +12,8 @@
 
 #include "addnorthvilladiag.h"
 #include "addsouthvilladiag.h"
+#include "addrentdocument.h"
+#include "addsalediag.h"
 
 
 

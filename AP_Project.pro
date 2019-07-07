@@ -40,7 +40,9 @@ SOURCES += \
     villa.cpp \
     managerpanel.cpp \
     addnorthvilladiag.cpp \
-    addsouthvilladiag.cpp
+    addsouthvilladiag.cpp \
+    addrentdocument.cpp \
+    addsalediag.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -56,6 +58,8 @@ HEADERS += \
     villa.h \
     managerpanel.h \
     addnorthvilladiag.h \
-    addsouthvilladiag.h
+    addsouthvilladiag.h \
+    addrentdocument.h \
+    addsalediag.h
 
 FORMS +=
