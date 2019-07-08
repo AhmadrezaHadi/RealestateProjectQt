@@ -2,10 +2,8 @@
 #define REQUESTSLIST_H
 
 #include <QDialog>
+#include "global.h"
 
-namespace Ui {
-class requestsList;
-}
 
 class requestsList : public QDialog
 {
@@ -16,7 +14,20 @@ public:
     ~requestsList();
 
 private:
-    Ui::requestsList *ui;
+    QListWidget * li_result;
+    QLabel * titleLabel;
+    QLabel * IDLabel;
+    QPushButton * acceptButton;
+    QPushButton * declineButton;
+    QLineEdit * IDLineEdit;
+
+
+
+private slots:
+
+    void declineButtonClicked();
+    void acceptButtonClicked();
+
 };
 
 #endif // REQUESTSLIST_H

@@ -53,7 +53,7 @@ void LoginDialog::ok_pressed()
     {
         qDebug() <<i <<"  "<< v_user[i].get_username() <<"  "<< v_user[i].get_password() << endl;
         qDebug() << username->text() <<"  "<< pass << endl;
-        if( v_user[i].get_username() == username->text() && v_user[i].get_password() == pass )
+        if( v_user[i].get_username() == username->text() && v_user[i].get_password() == pass &&  v_user[i].get_state() == 1)
         {
             index_of_current_user = i;
             current_user = v_user[i].get_username();

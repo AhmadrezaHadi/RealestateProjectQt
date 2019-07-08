@@ -41,12 +41,12 @@ SOURCES += \
         normaluserpanel.cpp \
         rent.cpp \
         sale.cpp \
+        showmanagerdiag.cpp \
         showpicture.cpp \
         signupdialog.cpp \
         startandend.cpp \
         user.cpp \
         villa.cpp \
-    showmanagerdiag.cpp \
     requestslist.cpp
 
 HEADERS += \
@@ -64,12 +64,12 @@ HEADERS += \
         normaluserpanel.h \
         rent.h \
         sale.h \
+        showmanagerdiag.h \
         showpicture.h \
         signupdialog.h \
         startandend.h \
         user.h \
         villa.h \
-    showmanagerdiag.h \
     requestslist.h
 
 FORMS +=

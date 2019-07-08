@@ -10,7 +10,7 @@ user::user()
 	time_out.hour = 0;
 	time_in.minute = 0;
 	time_in.second = 0;
-	state = 0;
+    state = 1;
     type = 1;
 
 }

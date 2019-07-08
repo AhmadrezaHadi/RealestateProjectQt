@@ -12,6 +12,7 @@ private:
 	double total_price_of_house;
     QString id , nu_username;
     static int h_count;
+    bool isInList;
 public:
 	house();
 	~house();
@@ -24,6 +25,7 @@ public:
 	void setId(QString s);
     void set_nu_username(QString s);
     void set_state(int a);
+    void setIsInList(bool b);
 	//getter:
 	int getFloorNumber();
 	int getNumberOfRooms();
@@ -33,4 +35,5 @@ public:
 	QString getId();
     QString get_nu_username();
     int get_state();
+    bool getIsInList();
 };

@@ -623,16 +623,29 @@ void normaluserpanel::btn_exit_pressed()
 void normaluserpanel::btn_showPicture_pressed()
 {
     QString id = li_id->text();
-    //TODO if apart
+    bool b =0;
     QString path;
-    for (int i = 0; i < v_apartment.size(); ++i){
-        if (id == v_apartment[i].getId()){
+    for (int i = 0; i < v_apartment.size(); ++i)
+    {
+        if (id == v_apartment[i].getId())
+        {
             path = v_apartment[i].getPicAd();
+            b = 1;
             break;
         }
     }
-
-    showPicture * showDiag = new showPicture(path);
-    showDiag->exec();
+    if ( b == 1)
+    {
+        showPicture * showDiag = new showPicture(path);
+        showDiag->exec();
+    }
+    else
+    {
+        QMessageBox * msg = new QMessageBox;
+        msg->setText("Not Found!");
+        msg->setIcon(QMessageBox::Information);
+        msg->setWindowTitle("ERROR!");
+        msg->exec();
+    }
 }
 

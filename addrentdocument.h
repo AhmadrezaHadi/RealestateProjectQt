@@ -1,16 +1,7 @@
 #ifndef ADDRENTDOCUMENT_H
 #define ADDRENTDOCUMENT_H
 
-#include <QDialog>
-#include <QPushButton>
-#include <QLabel>
-#include <QHBoxLayout>
-#include <QVBoxLayout>
-#include <QComboBox>
-#include <QWidget>
-#include <QLineEdit>
-
-
+#include "global.h"
 
 class addRentDocument : public QDialog
 {
@@ -33,15 +24,11 @@ private:
     QLabel * typeLabel;
     QLabel * IDLabel;
     QLabel * commisionLabel;
-    QLabel * mortgageLabel;
     QLabel * durationOfRentLabel;
-    QLabel * CostOfRentLabel;
 
     QLineEdit * IDLineEdit;
     QLineEdit * commisionLineEdit;
-    QLineEdit * mortgageLineEdit;
     QLineEdit * durationOfRentLineEdit;
-    QLineEdit * CostOfRentLineEdit;
 
 };
 

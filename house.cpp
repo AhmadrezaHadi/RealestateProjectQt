@@ -4,7 +4,6 @@
 house::house()
 {
 	// cout << "constructor is called!\n";
-	total_price_of_house = 0;
 	number_of_rooms = 0;
 	floor_number = 0;
 	building_space = 0;
@@ -13,6 +12,7 @@ house::house()
     nu_username = "-1";
     state = 0;
     h_count++;
+    isInList = 0;
 }
 house::~house()
 {
@@ -53,6 +53,11 @@ void house::set_state(int a)
     state = a;
 }
 
+void house::setIsInList(bool b)
+{
+    isInList = b;
+}
+
 //getter
 int house::getFloorNumber()
 {
@@ -85,6 +90,11 @@ QString house::get_nu_username()
 int house::get_state()
 {
     return state;
+}
+
+bool house::getIsInList()
+{
+    return isInList;
 }
 
 int house:: h_count = 0;

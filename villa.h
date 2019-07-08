@@ -16,6 +16,7 @@ protected:
 	int number_of_rooms;
     QString address, id, m_username, nu_username;
     int state; // 0 ya  1->rent ya 2->sale 3gone
+    bool isInList;
 public:
 	villa();
 	~villa();
@@ -29,6 +30,7 @@ public:
 	void setId(QString s);
     void set_m_username(QString s);
     void set_nu_username(QString s);
+    void setIsInList(bool b);
 
 	//getter:
 	int get_building_space();
@@ -40,6 +42,7 @@ public:
 	QString getId();
     QString get_m_username();
     QString get_nu_username();
+    bool getIsInList();
 
 	virtual double cal_total_price() = 0;
 };
@@ -54,16 +57,14 @@ private:
 public:
 	northVilla();
 	~northVilla();
-
 	void set_area_of_front_yard(int af);
-    void set_area_of_back_yard(int ab);
-    void set_total_price(double tp);
+	int get_area_of_front_yard();
+	void set_area_of_back_yard(int ab);
+	int get_area_of_back_yard();
+	void set_total_price(double tp);
+	double get_total_price();
 
-    double cal_total_price();
-
-    int get_area_of_front_yard();
-    int get_area_of_back_yard();
-    double get_total_price();
+	double cal_total_price();
 };
 
 class southVilla :public villa 

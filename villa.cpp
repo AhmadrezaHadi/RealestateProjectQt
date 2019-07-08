@@ -9,6 +9,7 @@ villa::villa()
 	building_space = 0;
     m_username = "-1";
     nu_username = "-1";
+    isInList = 0;
 }
 villa::~villa()
 {
@@ -82,9 +83,19 @@ void villa::set_nu_username(QString s)
 {
     nu_username = s;
 }
+
+void villa::setIsInList(bool b)
+{
+    isInList = b;
+}
 QString villa ::get_nu_username()
 {
     return nu_username;
+}
+
+bool villa::getIsInList()
+{
+    return isInList;
 }
 
 //northVilla

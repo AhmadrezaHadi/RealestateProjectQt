@@ -9,6 +9,8 @@
 #include "addpicture.h"
 #include "showpicture.h"
 #include "showmanagerdiag.h"
+#include "requestslist.h"
+
 
 class managerPanel : public QDialog
 {

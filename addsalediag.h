@@ -1,17 +1,7 @@
 #ifndef ADDSALEDIAG_H
 #define ADDSALEDIAG_H
 
-#include <QDialog>
-#include <QPushButton>
-#include <QLabel>
-#include <QHBoxLayout>
-#include <QVBoxLayout>
-#include <QComboBox>
-#include <QWidget>
-#include <QLineEdit>
-
-
-
+#include "global.h"
 
 class addSaleDiag : public QDialog
 {
