@@ -1,0 +1,21 @@
+#ifndef SHOWMANAGERDIAG_H
+#define SHOWMANAGERDIAG_H
+
+#include <QDialog>
+
+
+
+
+class showManagerDiag : public QDialog
+{
+    Q_OBJECT
+
+public:
+    explicit showManagerDiag(QWidget *parent = 0);
+    ~showManagerDiag();
+
+private:
+    
+};
+
+#endif // SHOWMANAGERDIAG_H

@@ -79,8 +79,9 @@ void LoginDialog::ok_pressed()
         v_user[index_of_current_user].set_time_in(mytime);
         if ( v_user[index_of_current_user].get_type() == 0)
         {
-            managerPanel *  managerTab = new managerPanel;
-            managerTab->exec();
+            this->close();
+            managerPanel * managePage = new managerPanel;
+            managePage->exec();
         }
         else
         {

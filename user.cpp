@@ -12,6 +12,7 @@ user::user()
 	time_in.second = 0;
 	state = 0;
     type = 1;
+
 }
 user::~user()
 {
@@ -50,7 +51,7 @@ void user::set_username(QString s)
 {
 	username = s;
 }
-void user::set_cash(int a)
+void user::set_cash(double a)
 {
 	cash = a;
 }
@@ -92,7 +93,7 @@ QString user::get_username()
 {
 	return username;
 }
-int user::get_cash()
+double user::get_cash()
 {
 	return cash;
 }

@@ -16,6 +16,7 @@
 #include <QListWidget>
 #include <QComboBox>
 #include <QMessageBox>
+#include <QTabWidget>
 #include <QByteArray>
 #include <QCryptographicHash>
 #include <QTextCodec>
@@ -43,6 +44,9 @@ extern QVector <apartment> v_apartment;
 extern QVector <northVilla> v_northVilla;
 extern QVector <southVilla> v_southVilla;
 extern QVector <user> v_user;
+extern QVector <rent> v_rent;
+extern QVector <sale> v_sale;
+
 
 extern QString  current_user;
 extern int index_of_current_user;

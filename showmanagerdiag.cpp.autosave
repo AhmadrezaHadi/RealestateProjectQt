@@ -1,0 +1,13 @@
+#include "showmanagerdiag.h"
+
+
+showManagerDiag::showManagerDiag(QWidget *parent) :
+    QDialog(parent)
+{
+    
+}
+
+showManagerDiag::~showManagerDiag()
+{
+    
+}

@@ -2,7 +2,7 @@
 #define NORMALUSERPANEL_H
 
 #include "global.h"
-
+#include "showpicture.h"
 class normaluserpanel : public QWidget
 {
     Q_OBJECT
@@ -29,6 +29,7 @@ class normaluserpanel : public QWidget
     QLineEdit * input2;
     QLabel * la_id;
     QLineEdit * li_id;
+    QPushButton * btn_showPicture;
 
 public:
     explicit normaluserpanel(QWidget *parent = nullptr);
@@ -47,6 +48,7 @@ public slots:
    void btn_7_pressed();
    void btn_select_pressed();
    void btn_exit_pressed();
+   void btn_showPicture_pressed();
 
 };
 

@@ -15,6 +15,9 @@ private:
 	bool elevator; // 1 or 0
     QString address, id , m_username;
 	QVector <house> v_house_for_apartment;
+    static int a_count;
+    QString pic_ad;
+
 public:
 	apartment();
 	~apartment();
@@ -28,6 +31,7 @@ public:
 	void set_v_house_for_apartment(QVector<house> v);
 	void setId(QString s);
     void set_m_username(QString s);
+    void setPicAd(QString address);
 
     //getter
 	int getTotalSpace();
@@ -39,6 +43,8 @@ public:
 	QVector<house> get_v_house_for_apartment();
 	QString getId();
     QString get_m_username();
+    QString getPicAd();
 
 	double calTotalPrice();
 };
+

@@ -25,4 +25,6 @@ public:
 	double get_commission();
 	double get_final_price();
 	QString get_id();
+
+    void cal_final_price(double a);
 };

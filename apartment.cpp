@@ -4,8 +4,9 @@
 apartment::apartment()
 {
 	// cout << "constructor is called!\n";
-	id = "00";
+    id = "00" + QString::number(a_count);
     m_username = "-1";
+    a_count++;
 }
 apartment::~apartment()
 {
@@ -64,6 +65,11 @@ void apartment::set_m_username(QString s)
     m_username = s;
 }
 
+void apartment::setPicAd(QString address)
+{
+    pic_ad = address;
+}
+
 //getter
 int apartment::getTotalSpace()
 {
@@ -102,8 +108,15 @@ QString apartment::get_m_username()
     return m_username;
 }
 
+QString apartment::getPicAd()
+{
+    return pic_ad;
+}
+
 double apartment::calTotalPrice()
 {
 	total_price = total_space*price_per_metr*0.8;
 	return total_price;
 }
+
+int apartment::a_count = 0;

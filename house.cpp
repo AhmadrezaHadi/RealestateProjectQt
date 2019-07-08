@@ -9,9 +9,10 @@ house::house()
 	floor_number = 0;
 	building_space = 0;
 	use = 0;
-	id = "01";
+    id = "01" + QString::number(h_count);
     nu_username = "-1";
     state = 0;
+    h_count++;
 }
 house::~house()
 {
@@ -85,3 +86,5 @@ int house::get_state()
 {
     return state;
 }
+
+int house:: h_count = 0;

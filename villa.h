@@ -50,6 +50,7 @@ private:
 	int area_of_front_yard;
 	int area_of_back_yard;
 	double total_price;
+    static int n_count;
 public:
 	northVilla();
 	~northVilla();
@@ -69,6 +70,8 @@ private:
 	int area_of_yard;
 	int area_of_parking;
 	double total_price;
+    static int s_count;
+
 public:
 	southVilla();
 	~southVilla();

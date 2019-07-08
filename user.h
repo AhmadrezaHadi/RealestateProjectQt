@@ -21,7 +21,7 @@ protected:
 	QString name, family, username, password;
     date birthday;
 	Time time_in, time_out;
-	int cash;
+    double cash;
 public:
 	user();
 	~user();
@@ -34,7 +34,7 @@ public:
 	void set_birthday(date d);
 	void set_time_in(Time t);
 	void set_time_out(Time t);
-	void set_cash(int a);
+    void set_cash(double a);
     void set_type(bool b);
 	//getter:
 	bool get_state();
@@ -45,7 +45,7 @@ public:
     date get_birthday();
 	Time get_time_in();
 	Time get_time_out();
-	int get_cash();
+    double get_cash();
     bool get_type();
 };
 

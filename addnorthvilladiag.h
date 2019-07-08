@@ -22,7 +22,7 @@ public:
 private slots:
     void addButtonClicked();
     void clearButtonClicked();
-    void addPictureButtonClicked();
+    void okModeClicked();
 
 private:
 
@@ -33,9 +33,11 @@ private:
     QLineEdit * addressLineEdit;
     QLineEdit * buildingSpaceLineEdit;
     QLineEdit * totalSpaceLineEdit;
+    QLineEdit * IDLineEdit;
+
 
     QComboBox * numberOfRoomsComboBox;
-
+    QComboBox * modeComboBox;
 
 
 
@@ -46,12 +48,15 @@ private:
     QLabel * pricePerMeterLabel;
     QLabel * numberOfRoomsLabel;
     QLabel * addressLabel;
+    QLabel * modeLabel;
+    QLabel * IDLabel;
 
 
-
+    QPushButton * okMode;
+    QPushButton * applyID;
     QPushButton * addButton;
     QPushButton * ClearButton;
-    QPushButton * addPictureButton;
+
 
 
 

@@ -91,7 +91,8 @@ QString villa ::get_nu_username()
 northVilla::northVilla()
 {
 	// cout << "constructor is called!\n";
-	id = "10";
+    id = "10"+ QString::number(n_count);
+    n_count++;
 }
 northVilla::~northVilla()
 {
@@ -131,7 +132,8 @@ double northVilla::cal_total_price()
 southVilla::southVilla()
 {
 	// cout << "constructor is called!\n";
-	id = "11";
+    id = "11"+ QString::number(s_count);
+    s_count++;
 }
 southVilla::~southVilla()
 {
@@ -166,3 +168,5 @@ double southVilla::cal_total_price()
 	total_price = price_per_metr*(building_space + (area_of_yard*0.3) + (area_of_parking*0.15));
 	return total_price;
 }
+int northVilla::n_count = 0;
+int southVilla::s_count = 0;

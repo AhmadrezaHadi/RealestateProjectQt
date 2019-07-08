@@ -30,15 +30,15 @@ void rent::set_commission(double a)
 }
 void rent::set_mortgage(double a)
 {
-	mortgage = (a * 5) / 100;
+    mortgage = a;
 }
 void rent::set_corent(double a)
 {
-	corent = (a / 100);
+    corent = a;
 }
-void rent::set_final_price()
+void rent::set_final_price(double a)
 {
-	final_price = (corent * dorent) + mortgage + (commission * mortgage);
+    final_price = a;
 }
 void rent::set_dorent(long long a)
 {
@@ -76,5 +76,20 @@ long long rent::get_dorent()
 }
 QString rent::get_id()
 {
-	return id;
+    return id;
+}
+
+void rent::cal_mortgage(double a)
+{
+    mortgage = (a * 5) / 100;
+}
+
+void rent::cal_corent(double a)
+{
+    corent = (a / 100);
+}
+
+void rent::cal_final_price()
+{
+    final_price = (corent * dorent) + mortgage + (commission * mortgage);
 }

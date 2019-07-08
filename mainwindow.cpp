@@ -33,15 +33,15 @@ void MainWindow::login_pressed()
 {
     LoginDialog * new_dialog=new LoginDialog();
 
-    //connect(this,SIGNAL(send_data(QString)),new_dialog,SLOT(set_on_label(QString)));// what is this??
-    new_dialog->show();
+    connect(this,SIGNAL(send_data(QString)),new_dialog,SLOT(set_on_label(QString)));// what is this??
+     new_dialog->show();
 
    // emit send_data(username->text());
 }
 void MainWindow::signup_pressed()
 {
     SignupDialog * new_dialog = new SignupDialog();
-    //connect(this,SIGNAL(send_data(QString)),new_dialog,SLOT(set_on_label(QString))); // what is this??
+    connect(this,SIGNAL(send_data(QString)),new_dialog,SLOT(set_on_label(QString))); // what is this??
     new_dialog->show();
 
 }

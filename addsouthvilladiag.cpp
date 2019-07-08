@@ -9,6 +9,7 @@ addSouthVillaDiag::addSouthVillaDiag(QWidget *parent) :
     addressLineEdit = new QLineEdit();
     buildingSpaceLineEdit = new QLineEdit();
     totalSpaceLineEdit = new QLineEdit();
+    IDLineEdit = new QLineEdit();
 
     numberOfRoomsComboBox = new QComboBox();
     numberOfRoomsComboBox->addItem("0");
@@ -19,6 +20,11 @@ addSouthVillaDiag::addSouthVillaDiag(QWidget *parent) :
     numberOfRoomsComboBox->addItem("5");
 
 
+    modeComboBox = new QComboBox();
+    modeComboBox->addItem("Add");
+    modeComboBox->addItem("Edit");
+
+
     areaOfYardLabel = new QLabel("Area Of Yard");
     areaOfParkingLabel = new QLabel("Area Of Parking");
     buildingSpaceLabel = new QLabel("Building Space");
@@ -26,28 +32,45 @@ addSouthVillaDiag::addSouthVillaDiag(QWidget *parent) :
     pricePerMeterLabel = new QLabel("Price per Meter");
     numberOfRoomsLabel = new QLabel("Number of Rooms");
     addressLabel = new QLabel("Address");
+    IDLabel = new QLabel("ID");
+    modeLabel = new QLabel("Mode");
 
 
 
-    addButton = new QPushButton("Add Villa");
+
+    addButton = new QPushButton("Apply");
     ClearButton = new QPushButton("Clear");
-    addPictureButton = new QPushButton("Add Picture");
+    modeButton = new QPushButton("Ok");
+    applyIDButton = new QPushButton("Find ID");
+
 
 
     //connect
     connect(addButton, SIGNAL(clicked(bool)), this, SLOT(addButtonClicked()));
     connect(ClearButton, SIGNAL(clicked(bool)), this, SLOT(clearButtonClicked()));
-    connect(addPictureButton, SIGNAL(clicked(bool)), this, SLOT(addPictureButtonClicked()));
+
+    connect(modeButton, SIGNAL(clicked(bool)), this, SLOT(modeButtonClicked()));
 
 
 
     //Layouts
+    QHBoxLayout * IDBox = new QHBoxLayout();
+    QHBoxLayout * modeBox = new QHBoxLayout();
+
     QVBoxLayout * rightBox = new QVBoxLayout();
     QVBoxLayout * leftBox = new QVBoxLayout();
     QHBoxLayout * buttonsBox = new QHBoxLayout();
     QHBoxLayout * mainLayout = new QHBoxLayout();
     QVBoxLayout * page = new QVBoxLayout();
 
+    IDBox->addWidget(IDLineEdit);
+    IDBox->addWidget(applyIDButton);
+
+    modeBox->addWidget(modeComboBox);
+    modeBox->addWidget(modeButton);
+
+    leftBox->addWidget(modeLabel);
+    leftBox->addWidget(IDLabel);
     leftBox->addWidget(buildingSpaceLabel);
     leftBox->addWidget(totalSpaceLabel);
     leftBox->addWidget(pricePerMeterLabel);
@@ -57,6 +80,8 @@ addSouthVillaDiag::addSouthVillaDiag(QWidget *parent) :
     leftBox->addWidget(areaOfParkingLabel);
 
 
+    rightBox->addLayout(modeBox);
+    rightBox->addLayout(IDBox);
     rightBox->addWidget(buildingSpaceLineEdit);
     rightBox->addWidget(totalSpaceLineEdit);
     rightBox->addWidget(pricePerMeterLineEdit);
@@ -66,10 +91,12 @@ addSouthVillaDiag::addSouthVillaDiag(QWidget *parent) :
     rightBox->addWidget(areaOfParkingLineEdit);
 
 
+    IDLabel->hide();
+    IDLineEdit->hide();
+    applyIDButton->hide();
 
 
     buttonsBox->addWidget(ClearButton);
-    buttonsBox->addWidget(addPictureButton);
     buttonsBox->addWidget(addButton);
 
 
@@ -92,14 +119,33 @@ addSouthVillaDiag::~addSouthVillaDiag()
 void addSouthVillaDiag::addButtonClicked()
 {
 
+
 }
 
 void addSouthVillaDiag::clearButtonClicked()
 {
-
+    IDLineEdit->setText("");
+    areaOfParkingLineEdit->setText("");
+    areaOfYardLineEdit->setText("");
+    pricePerMeterLineEdit->setText("");
+    addressLineEdit->setText("");
+    totalSpaceLineEdit->setText("");
+    buildingSpaceLineEdit->setText("");
+    numberOfRoomsComboBox->setCurrentIndex(0);
 }
 
-void addSouthVillaDiag::addPictureButtonClicked()
+
+
+void addSouthVillaDiag::modeButtonClicked()
 {
+    if(modeComboBox->currentIndex() == 0){
+        IDLabel->hide();
+        IDLineEdit->hide();
+        applyIDButton->hide();
+    }else{
+        IDLabel->show();
+        IDLineEdit->show();
+        applyIDButton->show();
+    }
 
 }

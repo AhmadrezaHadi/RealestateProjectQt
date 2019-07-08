@@ -11,7 +11,7 @@ private:
     int floor_number, number_of_rooms, building_space, use , state; // 0 ->normal 1->administrative 2->commercial   0free 1rent 2sale 3gone
 	double total_price_of_house;
     QString id , nu_username;
-	// picture!
+    static int h_count;
 public:
 	house();
 	~house();

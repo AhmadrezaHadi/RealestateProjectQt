@@ -31,7 +31,7 @@ void sale::set_commission(double a)
 }
 void sale::set_final_price(double a)
 {
-	final_price = a + (a * commission);
+    final_price = a;
 }
 void sale::set_id(QString s)
 {
@@ -56,5 +56,10 @@ double sale::get_final_price()
 }
 QString sale::get_id()
 {
-	return id;
+    return id;
+}
+
+void sale::cal_final_price(double a)
+{
+    final_price = a + (a * commission);
 }
