@@ -46,7 +46,8 @@ SOURCES += \
         startandend.cpp \
         user.cpp \
         villa.cpp \
-    showmanagerdiag.cpp
+    showmanagerdiag.cpp \
+    requestslist.cpp
 
 HEADERS += \
         addnorthvilladiag.h \
@@ -68,7 +69,8 @@ HEADERS += \
         startandend.h \
         user.h \
         villa.h \
-    showmanagerdiag.h
+    showmanagerdiag.h \
+    requestslist.h
 
 FORMS +=
 

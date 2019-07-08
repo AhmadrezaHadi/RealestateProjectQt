@@ -214,7 +214,7 @@ managerPanel::managerPanel(QWidget *parent) :
     addSouthVillaDiag * southVillaDiag = new addSouthVillaDiag();
     addRentDocument * rentDiag = new addRentDocument();
     addSaleDiag * saleDiag = new addSaleDiag();
-
+    showManagerDiag * managerShowDiag = new showManagerDiag();
 
     mainTab->addTab(addApartmentDiag, "Add Apartment");
     mainTab->addTab(addHouseDiag, "Add House");
@@ -222,6 +222,7 @@ managerPanel::managerPanel(QWidget *parent) :
     mainTab->addTab(southVillaDiag, "Add South Villa");
     mainTab->addTab(rentDiag, "Add Rent Document");
     mainTab->addTab(saleDiag, "Add Sale Document");
+    mainTab->addTab(managerShowDiag,"Show");
 
     mainVLayout->addWidget(mainTab);
 

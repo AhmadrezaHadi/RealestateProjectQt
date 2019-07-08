@@ -11,6 +11,9 @@
 #include <QLineEdit>
 
 
+#include "global.h"
+#include "startandend.h"
+
 class addSouthVillaDiag : public QDialog
 {
     Q_OBJECT
@@ -23,8 +26,9 @@ private slots:
     void addButtonClicked();
     void clearButtonClicked();
 
-
+    void applyIDButtonClicked();
     void modeButtonClicked();
+
 
 private:
 

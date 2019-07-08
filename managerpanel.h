@@ -8,7 +8,7 @@
 #include "addsalediag.h"
 #include "addpicture.h"
 #include "showpicture.h"
-
+#include "showmanagerdiag.h"
 
 class managerPanel : public QDialog
 {

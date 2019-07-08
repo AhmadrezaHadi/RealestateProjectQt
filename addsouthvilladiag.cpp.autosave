@@ -132,7 +132,7 @@ void addSouthVillaDiag::addButtonClicked()
         temp.cal_total_price();
         qDebug () << temp.getId();
         v_southVilla.push_back(temp);
-        //qDebug () << v_northVilla[v_northVilla.size()-1].getId();
+        //qDebug () << v_southVilla[v_northVilla.size()-1].getId();
         end();
         QMessageBox * msg = new QMessageBox;
         msg->setText("Villa Added Successfuly.");

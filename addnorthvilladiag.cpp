@@ -1,5 +1,6 @@
 #include "addnorthvilladiag.h"
 
+
 addNorthVillaDiag::addNorthVillaDiag(QWidget *parent) :
     QDialog(parent)
 {
@@ -47,7 +48,7 @@ addNorthVillaDiag::addNorthVillaDiag(QWidget *parent) :
     connect(addButton, SIGNAL(clicked(bool)), this, SLOT(addButtonClicked()));
     connect(ClearButton, SIGNAL(clicked(bool)), this, SLOT(clearButtonClicked()));
     connect(okMode, SIGNAL(clicked(bool)), this, SLOT(okModeClicked()));
-
+    connect(applyID, SIGNAL(clicked(bool)), this, SLOT(applyIDClicked()));
 
 
     //Layouts
@@ -92,7 +93,6 @@ addNorthVillaDiag::addNorthVillaDiag(QWidget *parent) :
 
 
 
-
     buttonsBox->addWidget(ClearButton);
     buttonsBox->addWidget(addButton);
 
@@ -111,7 +111,6 @@ addNorthVillaDiag::addNorthVillaDiag(QWidget *parent) :
 
     setLayout(page);
 
-
 }
 
 addNorthVillaDiag::~addNorthVillaDiag()
@@ -121,7 +120,49 @@ addNorthVillaDiag::~addNorthVillaDiag()
 
 void addNorthVillaDiag::addButtonClicked()
 {
-
+    if (modeComboBox->currentIndex() == 0){
+        northVilla temp;
+        temp.set_address(addressLineEdit->text());
+        temp.set_area_of_back_yard(areaOfBackYardLineEdit->text().toInt());
+        temp.set_area_of_front_yard(areaOfFrontYardLineEdit->text().toInt());
+        temp.set_building_space(buildingSpaceLineEdit->text().toInt());
+        temp.set_m_username(current_user);
+        temp.set_number_of_rooms(numberOfRoomsComboBox->currentIndex());
+        temp.set_price_per_metr(pricePerMeterLineEdit->text().toDouble());
+        temp.set_total_space(totalSpaceLineEdit->text().toInt());
+        temp.cal_total_price();
+        qDebug () << temp.getId();
+        v_northVilla.push_back(temp);
+        qDebug () << v_northVilla[v_northVilla.size()-1].getId();
+        end();
+        QMessageBox * msg = new QMessageBox;
+        msg->setText("Villa Added Successfuly.");
+        msg->setIcon(QMessageBox::Information);
+        msg->setWindowTitle("ERROR!");
+        msg->exec();
+    }else if(modeComboBox->currentIndex() == 1){
+        QString ID = IDLineEdit->text();
+        for (int i = 0; i < v_northVilla.size(); ++i){
+            if (v_northVilla[i].getId() == ID){
+                v_northVilla[i].set_address(addressLineEdit->text());
+                v_northVilla[i].set_area_of_back_yard(areaOfBackYardLineEdit->text().toInt());
+                v_northVilla[i].set_area_of_front_yard(areaOfFrontYardLineEdit->text().toInt());
+                v_northVilla[i].set_building_space(buildingSpaceLineEdit->text().toInt());
+                v_northVilla[i].set_m_username(current_user);
+                v_northVilla[i].set_number_of_rooms(numberOfRoomsComboBox->currentIndex());
+                v_northVilla[i].set_price_per_metr(pricePerMeterLineEdit->text().toDouble());
+                v_northVilla[i].set_total_space(totalSpaceLineEdit->text().toInt());
+                v_northVilla[i].cal_total_price();
+                end();
+                QMessageBox * msg = new QMessageBox;
+                msg->setText("Villa Edited Successfuly.");
+                msg->setIcon(QMessageBox::Information);
+                msg->setWindowTitle("ERROR!");
+                msg->exec();
+                break;
+            }
+        }
+    }
 }
 
 void addNorthVillaDiag::clearButtonClicked()
@@ -148,6 +189,24 @@ void addNorthVillaDiag::okModeClicked()
         IDLabel->show();
         IDLineEdit->show();
         applyID->show();
+    }
+
+}
+
+void addNorthVillaDiag::applyIDClicked()
+{
+    QString ID = IDLineEdit->text();
+    for (int i = 0; i < v_northVilla.size(); ++i){
+        if (v_northVilla[i].getId() == ID){
+            totalSpaceLineEdit->setText(QString::number(v_northVilla[i].get_total_space()));
+            pricePerMeterLineEdit->setText(QString::number(v_northVilla[i].get_price_per_metr()));
+            areaOfBackYardLineEdit->setText(QString::number(v_northVilla[i].get_area_of_back_yard()));
+            areaOfFrontYardLineEdit->setText(QString::number(v_northVilla[i].get_area_of_front_yard()));
+            numberOfRoomsComboBox->setCurrentIndex(v_northVilla[i].get_number_of_rooms());
+            addressLineEdit->setText(v_northVilla[i].get_address());
+            buildingSpaceLineEdit->setText(QString::number(v_northVilla[i].get_building_space()));
+            break;
+        }
     }
 
 }

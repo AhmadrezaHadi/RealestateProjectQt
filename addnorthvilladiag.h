@@ -10,6 +10,9 @@
 #include <QWidget>
 #include <QLineEdit>
 
+#include "global.h"
+#include "startandend.h"
+
 
 class addNorthVillaDiag : public QDialog
 {
@@ -23,6 +26,7 @@ private slots:
     void addButtonClicked();
     void clearButtonClicked();
     void okModeClicked();
+    void applyIDClicked();
 
 private:
 

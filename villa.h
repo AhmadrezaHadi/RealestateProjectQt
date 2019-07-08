@@ -54,14 +54,16 @@ private:
 public:
 	northVilla();
 	~northVilla();
-	void set_area_of_front_yard(int af);
-	int get_area_of_front_yard();
-	void set_area_of_back_yard(int ab);
-	int get_area_of_back_yard();
-	void set_total_price(double tp);
-	double get_total_price();
 
-	double cal_total_price();
+	void set_area_of_front_yard(int af);
+    void set_area_of_back_yard(int ab);
+    void set_total_price(double tp);
+
+    double cal_total_price();
+
+    int get_area_of_front_yard();
+    int get_area_of_back_yard();
+    double get_total_price();
 };
 
 class southVilla :public villa 
